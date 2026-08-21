@@ -1,5 +1,6 @@
 package br.com.projeto.model.autenticacao;
 
+import br.com.projeto.Enum.TipoUsuarioEnum;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -29,8 +30,9 @@ public class UsuarioBebe {
     @JoinColumn(name = "bebe_id")
     private Bebe bebe;
 
+    @Enumerated(EnumType.STRING)
     @Column(nullable = false)
-    private String papel;
+    private TipoUsuarioEnum papel;
 
     @Column(nullable = false)
     private LocalDateTime dataVinculo;

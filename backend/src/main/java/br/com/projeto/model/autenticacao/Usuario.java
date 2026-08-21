@@ -37,10 +37,14 @@ public class Usuario {
     @Column(nullable = false)
     private LocalDate dataCadastro;
 
-    @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Bebe> bebes;
-
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private TipoUsuarioEnum tipo;
+
+    @OneToMany(
+            mappedBy = "usuario",
+            cascade = CascadeType.ALL,
+            orphanRemoval = true
+    )
+    private List<UsuarioBebe> bebesVinculados;
 }

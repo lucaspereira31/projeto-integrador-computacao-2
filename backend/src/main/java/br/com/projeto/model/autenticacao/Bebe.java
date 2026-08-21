@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.time.LocalDate;
+import java.util.List;
 
 @Entity
 @Table(name = "bebes")
@@ -30,7 +31,6 @@ public class Bebe {
     private String fotoPerfil;
     private String observacoes;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "usuario_id", nullable = false)
-    private Usuario usuario;
+    @OneToMany(mappedBy = "bebe")
+    private List<UsuarioBebe> usuariosBebes;
 }
