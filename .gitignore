@@ -1,0 +1,19 @@
+# Docker
+pgdata/
+pgdata_premium/
+
+# Java / Maven
+target/
+*.class
+.mvn/
+*.jar
+*.war
+
+# IDEs
+.idea/
+.vscode/
+*.iml
+.DS_Store
+
+# Logs
+*.log
