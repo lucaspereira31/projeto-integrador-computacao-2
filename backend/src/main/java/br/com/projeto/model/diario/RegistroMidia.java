@@ -1,4 +1,4 @@
-package br.com.projeto.model.saude;
+package br.com.projeto.model.diario;
 
 import br.com.projeto.model.autenticacao.Bebe;
 import jakarta.persistence.*;
@@ -10,12 +10,12 @@ import lombok.Setter;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "diario_notas")
+@Table(name = "registros_midia")
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class DiarioNotas {
+public class RegistroMidia {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -28,10 +28,7 @@ public class DiarioNotas {
     @Column(nullable = false)
     private LocalDateTime dataHora;
 
-    private String titulo;
-
-    @Column(columnDefinition = "TEXT")
-    private String texto;
-
-    private String tag;
+    private String tipo;
+    private String urlArquivo;
+    private String descricao;
 }

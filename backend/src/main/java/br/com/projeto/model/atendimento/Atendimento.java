@@ -1,6 +1,8 @@
-package br.com.projeto.model.saude;
+package br.com.projeto.model.atendimento;
 
+import br.com.projeto.Enum.StatusAtendimento;
 import br.com.projeto.model.autenticacao.Bebe;
+import br.com.projeto.model.autenticacao.Usuario;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -10,12 +12,12 @@ import lombok.Setter;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "registros_midia")
+@Table(name = "atendimentos")
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class RegistroMidia {
+public class Atendimento {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -25,10 +27,16 @@ public class RegistroMidia {
     @JoinColumn(name = "bebe_id", nullable = false)
     private Bebe bebe;
 
-    @Column(nullable = false)
-    private LocalDateTime dataHora;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "baba_id", nullable = false)
+    private Usuario baba;
 
-    private String tipo;
-    private String urlArquivo;
-    private String descricao;
+    @Column(nullable = false)
+    private LocalDateTime dataInicio;
+
+    private LocalDateTime dataFim;
+
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
+    private StatusAtendimento status;
 }
