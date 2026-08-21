@@ -1,5 +1,6 @@
 package br.com.projeto.model.autenticacao;
 
+import br.com.projeto.Enum.TipoUsuarioEnum;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -38,4 +39,8 @@ public class Usuario {
 
     @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Bebe> bebes;
+
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
+    private TipoUsuarioEnum tipo;
 }
