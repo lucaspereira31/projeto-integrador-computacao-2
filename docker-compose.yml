@@ -24,4 +24,4 @@ services:
       - postgres-db
 
 volumes:
-  pgdata_premium:
+  pgdata_premium: 
