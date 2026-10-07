@@ -7,6 +7,13 @@
   <link rel="stylesheet" href="../css/style.css">
   <link rel="stylesheet" href="../css/components.css">
   <link rel="stylesheet" href="../css/dashboard.css">
+
+  <script src="../js/auth.js"></script>
+<script>
+  // Se não estiver logado, redireciona para a tela de login
+  AuthService.protegerRota("login.html");
+</script>
+
 </head>
 <body>
 

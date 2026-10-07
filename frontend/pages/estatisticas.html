@@ -207,6 +207,47 @@
         }
       });
     });
+//
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="../js/charts.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const dias = ['Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb', 'Dom'];
+      ChartsModule.criarGraficoSono('graficoSono', dias, [13.2, 14.0, 12.8, 14.5, 13.5, 14.2, 13.8]);
+      ChartsModule.criarGraficoAlimentacao('graficoAlimentacao', dias, [720, 810, 750, 800, 760, 840, 790]);
+    });
   </script>
+  
+  </script>
+<!-- Biblioteca externa Chart.js via CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- Módulos do Sistema -->
+  <script src="../js/api.js"></script>
+  <script src="../js/charts.js"></script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const diasSemana = ['Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb', 'Dom'];
+
+      // Renderiza o gráfico de sono
+      ChartsModule.criarGraficoSono(
+        'graficoSono', 
+        diasSemana, 
+        [13.2, 14.0, 12.8, 14.5, 13.5, 14.2, 13.8]
+      );
+
+      // Renderiza o gráfico de alimentação
+      ChartsModule.criarGraficoAlimentacao(
+        'graficoAlimentacao', 
+        diasSemana, 
+        [720, 810, 750, 800, 760, 840, 790]
+      );
+    });
+  </script>
+
+
+
+
 </body>
 </html>
